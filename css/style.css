@@ -1,0 +1,168 @@
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Stili generali del corpo */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f5f5f5;
+	color: #333;
+}
+
+/* Header della app - sticky mantiene l'effetto del margin-bottom */
+header {
+	position: sticky;
+	top: 0;
+	/* 2 e non 1: deve stare sopra il badge delle card quando scorri */
+	z-index: 2;
+	background-color: #2c3e50;
+	color: white;
+	margin-bottom: 24px;
+	text-align: center;
+	font-weight: bold;
+}
+
+header h1 {
+	font-size: 24px;
+	font-weight: bold;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 24px;
+}
+
+/* Contenitore principale */
+main {
+	padding: 0 24px 24px;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/* Il container di martedì */
+.container {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+/* Il menu e l'icona */
+.left-nav {
+	list-style-type: none;
+	display: none;
+	gap: 16px;
+}
+
+.bi-list {
+	font-size: 32px;
+}
+
+
+/* Stile delle card */
+.card {
+	position: relative;
+	background-color: white;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 20px;
+	min-height: 200px;
+}
+
+.badge {
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	background-color: #e74c3c;
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 4px 8px;
+	border-radius: 12px;
+	text-transform: uppercase;
+	/* sopra la card accanto quando le card si toccano */
+	z-index: 1;
+}
+
+.card img {
+	display: inline-block;
+	width: 55px;
+	height: 55px;
+	margin-right: 15px;
+	border: 2px solid #2c3e50;
+}
+
+.card h2 {
+	display: inline-block;
+	color: #2c3e50;
+	font-size: 22px;
+	font-weight: bold;
+	margin-bottom: 12px;
+	text-transform: capitalize;
+}
+
+.card p {
+	font-size: 16px;
+	color: #666;
+	font-style: normal;
+}
+
+/* Il banner */
+.banner {
+	padding: 16px;
+	background-color: #f1c40f;
+	border-radius: 8px;
+	font-weight: bold;
+	text-align: center;
+	grid-column: 1 / -1;
+	order: -1; 
+}
+
+
+/* Il menu è già fatto: da 576px le voci al posto dell'icona */
+@media screen and (min-width: 576px) {
+	.left-nav { display: flex; }
+	.bi-list { display: none; }
+}
+
+/* Da qui in giù scrivi tu: le colonne con Grid e il banner */
+
+.row {
+    display: grid;
+    gap: 24px; 
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+/*
+@media screen and (min-width:676px) {
+	.row {
+		grid-template-columns: repeat(2,1fr);
+
+
+	}
+}
+
+@media screen and (min-width: 876px) {
+	.row {
+grid-template-columns: repeat(3,1fr);
+}
+ .banner {
+  order: 1;
+}
+}
+	
+	
+	
+	@media screen and (min-width: 1200px) {
+	.row {
+grid-template-columns: repeat(4,1fr);
+	}
+}
+
+*/
